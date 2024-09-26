@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Curiosos</title>
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo ao site dos curiosos!</h1>
+        <p class="counter">Mais um curioso visitando: <span id="contador"></span></p>
+        <p>Você é mais um curioso!</p>
+    </div>
+
+    <!-- Script para o contador -->
+    <script>
+        // Verifica se o contador já existe no localStorage
+        let contador = localStorage.getItem('contadorDeCuriosos');
+
+        // Se não existir, inicializa com 0
+        if (!contador) {
+            contador = 0;
+        }
+
+        // Incrementa o contador a cada nova visita
+        contador = parseInt(contador) + 1;
+
+        // Atualiza o valor do contador no localStorage
+        localStorage.setItem('contadorDeCuriosos', contador);
+
+        // Exibe o valor do contador na página
+        document.getElementById('contador').innerText = contador;
+    </script>
+</body>
+</html>
